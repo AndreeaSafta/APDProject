@@ -71,7 +71,7 @@ void countWordFrequenciesThread(const std::string& text) {
     std::vector<std::pair<std::string, int>> sortedWords(wordFreq.begin(), wordFreq.end());
     std::sort(sortedWords.begin(), sortedWords.end());
 
-    std::cout << "Frecvența cuvintelor este:" << std::endl;
+    std::cout << "Frecventa cuvintelor este:" << std::endl;
     for (const auto& entry : sortedWords) {
         std::cout << entry.first << ": " << entry.second << std::endl;
     }
