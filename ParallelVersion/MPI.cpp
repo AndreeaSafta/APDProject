@@ -10,7 +10,7 @@
 
 using namespace std;
 
-// Functia pentru tokenizarea unei linii de text
+// functia pentru tokenizarea unei linii de text
 vector<string> tokenize(const string& line) {
     vector<string> tokens;
     stringstream ss(line);
@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
     int world_rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &world_rank); // obt rangul procesului curent
 
-    // Masurarea timpului de inceput
+    // masurarea timpului de inceput
     auto start_time = chrono::high_resolution_clock::now();
 
     string filename = "input.txt";
@@ -85,16 +85,16 @@ int main(int argc, char* argv[]) {
             }
         }
 
-        // Sortarea perechilor cuvant-frecventa dupa cuvant
+        // sortarea perechilor cuvant-frecventa dupa cuvant
         vector<pair<string, int>> sortedWordCounts(globalWordCounts.begin(), globalWordCounts.end());
         sort(sortedWordCounts.begin(), sortedWordCounts.end());
 
-        // Afisarea rezultatelor sortate
+        // afisarea rezultatelor sortate
         for (const auto& pair : sortedWordCounts) {
             cout << "Frecventa cuvantului '" << pair.first << "': " << pair.second << endl;
         }
 
-        // Masurarea timpului de sfarsit si afisarea timpului total de executie
+        // afisare timp de executie 
         auto end_time = chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time).count();
         cout << "Timpul total de rulare: " << duration << " milisecunde" << endl;
