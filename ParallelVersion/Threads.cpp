@@ -80,7 +80,7 @@ void countWordFrequenciesThread(const std::string& text) {
 int main() {
     std::ifstream inputFile("input.txt");
     if (!inputFile) {
-        std::cerr << "Nu s-a putut deschide fișierul input.txt" << std::endl;
+        std::cerr << "Nu s-a putut deschide fisierul input.txt" << std::endl;
         return 1;
     }
 
